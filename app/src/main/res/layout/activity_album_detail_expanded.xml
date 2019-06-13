@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:id="@+id/detail_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/album_art"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:clickable="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mean_something_kinder_than_wolves"
+            android:transitionName="albumArt" />
+
+        <RelativeLayout
+            android:id="@+id/title_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/album_art"
+            android:layout_alignParentStart="true"
+            android:background="#31576b"
+            android:paddingStart="40dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="20dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/album_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/desc_album_title"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/artist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/album_title"
+                android:layout_alignStart="@id/album_title"
+                android:text="@string/desc_album_artist"
+                android:textAppearance="?android:attr/textAppearance" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/title_panel"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="-30dp"
+            android:background="@drawable/green_circle"
+            android:contentDescription="@string/desc_fab"
+            android:src="@drawable/ic_pause_24dp"
+            android:transitionName="fab" />
+
+        <LinearLayout
+            android:id="@+id/track_panel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/title_panel"
+            android:background="#eeeeee"
+            android:gravity="center_vertical"
+            android:minHeight="80dp"
+            android:padding="10dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/volume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/desc_sound_icon"
+                android:src="@drawable/ic_volume_up_24dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/track_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:text="@string/track_title"
+                android:textAppearance="?android:attr/textAppearanceInverse"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="@string/track_time"
+                android:textAppearance="?android:attr/textAppearanceInverse" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lyrics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/track_panel"
+            android:layout_margin="15dp"
+            android:text="@string/block_of_text"
+            android:textAppearance="?android:attr/textAppearanceInverse"
+            android:textColor="@android:color/black" />
+    </RelativeLayout>
+</ScrollView>
